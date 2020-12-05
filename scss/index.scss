@@ -1,0 +1,56 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+    // outline:1px solid green;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+body{
+    perspective: 1000px;
+}
+.container{
+    width: 800px;
+}
+.card{
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.circle{
+    height: 160px;
+    width: 160px;
+    position: absolute;
+    background: linear-gradient(
+        to right,
+        rgb(133, 18, 18),
+        rgba(6, 23, 118, 0.947)
+    );
+    z-index: 1;
+}
+.card-shoes-photo{
+    width: 285px;
+    z-index: 2;
+    transition: all .8s ease-out;
+    img{
+        overflow: hidden;
+        margin-top: -50px;
+        margin-left: 8px;
+    }
+}
+.title{
+    transition: all .7s ease-out;
+}
+.introduction{
+    transition: all .6s ease-out;
+}
+.shoes-size{
+    transition: all .5s ease-out;
+}
+.shoes-size li:hover{
+    background: rgb(206, 67, 67);
+    color: white;
+}
+.btn-danger{
+    background: rgb(165, 54, 54),;
+}
