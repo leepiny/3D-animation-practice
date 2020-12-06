@@ -38,17 +38,35 @@ container.addEventListener('mouseleave',(e =>{
 
 //phone Animation
 
-window.addEventListener('deviceorientation',(e =>{
-    // let alpha = e.alpha;
-    let beta = e.beta;
-    let gamma = e.gamma;
+// window.addEventListener('deviceorientation',(e =>{
+//     // let alpha = e.alpha;
+//     let beta = e.beta;
+//     let gamma = e.gamma;
 
-    card.style.transform = `rotateY(${gamma}deg) rotateX(${beta}deg)`;
+//     card.style.transform = `rotateY(${gamma}deg) rotateX(${beta}deg)`;
 
-     //item popUp
-     shoes.style.transform = 'translateZ(130px) rotateZ(-20deg)';
-     title.style.transform = 'translateZ(110px)';
-     text.style.transform = 'translateZ(90px)';
-     size.style.transform = 'translateZ(70px)';
+//      //item popUp
+//      shoes.style.transform = 'translateZ(130px) rotateZ(-20deg)';
+//      title.style.transform = 'translateZ(110px)';
+//      text.style.transform = 'translateZ(90px)';
+//      size.style.transform = 'translateZ(70px)';
     
-}))
+// }))
+
+if(window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', function(event) {
+  var a = document.getElementById('alpha',
+          b = document.getElementById('beta'),
+          g = document.getElementById('gamma'),
+          alpha = event.alpha,
+          beta = event.beta,
+              gamma = event.gamma;
+
+  a.innerHTML = Math.round(alpha);
+  b.innerHTML = Math.round(beta);
+  g.innerHTML = Math.round(gamma);
+
+    }, false);
+}else{
+    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
