@@ -42,10 +42,10 @@ window.addEventListener('deviceorientation',(e =>{
     // let alpha = e.alpha;
     // let beta = e.beta;
     // let gamma = e.gamma;
-    e.gamma = (window.innerWidth / 2 - e.pageX) / 20;
-    e.beta = (window.innerHeight / 2 - e.pageY) / 20;
+    e.gamma = (window.innerWidth / 2 - e.gamma) / 20;
+    e.beta = (window.innerHeight / 2 - e.beta) / 20;
 
-    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    card.style.transform = `rotateY(${e.gamma}deg) rotateX(${e.beta}deg)`;
 
      //item popUp
      shoes.style.transform = 'translateZ(130px) rotateZ(-20deg)';
