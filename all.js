@@ -35,3 +35,22 @@ container.addEventListener('mouseleave',(e =>{
     text.style.transform = 'translateZ(0px)';
     size.style.transform = 'translateZ(0px)';
 }))
+
+//phone Animation
+
+window.addEventListener('deviceorientation',(e =>{
+    // let alpha = e.alpha;
+    // let beta = e.beta;
+    // let gamma = e.gamma;
+    e.gamma = (window.innerWidth / 2 - e.pageX) / 20;
+    e.beta = (window.innerHeight / 2 - e.pageY) / 20;
+
+    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+
+     //item popUp
+     shoes.style.transform = 'translateZ(130px) rotateZ(-20deg)';
+     title.style.transform = 'translateZ(110px)';
+     text.style.transform = 'translateZ(90px)';
+     size.style.transform = 'translateZ(70px)';
+    
+}))
