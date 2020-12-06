@@ -40,12 +40,10 @@ container.addEventListener('mouseleave',(e =>{
 
 window.addEventListener('deviceorientation',(e =>{
     // let alpha = e.alpha;
-    // let beta = e.beta;
-    // let gamma = e.gamma;
-    e.gamma = (window.innerWidth / 2 - e.gamma) / 20;
-    e.beta = (window.innerHeight / 2 - e.beta) / 20;
+    let beta = e.beta;
+    let gamma = e.gamma;
 
-    card.style.transform = `rotateY(${e.gamma}deg) rotateX(${e.beta}deg)`;
+    card.style.transform = `rotateY(${gamma}deg) rotateX(${beta}deg)`;
 
      //item popUp
      shoes.style.transform = 'translateZ(130px) rotateZ(-20deg)';
